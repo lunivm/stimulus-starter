@@ -35,8 +35,29 @@
           <label for="input1_2_3">Input1_2_3</label>
           <input type="text" id="input1_2_3"/>
         </div>
-      </div>
     </div>
+
+    <div data-form-expandable-target="content">
+      <hr>
+      <h4>Radio button</h4>
+
+      <fieldset data-controller="form-expandable" data-action="click->form-expandable#toggle">
+        <div>
+          <label for="radio_1">Yes</label>
+          <input id="radio_1" type="radio" value="any value needed" name="radiogroup" data-form-expandable-target="flag">
+        </div>
+        <div>
+          <label for="radio_2">No</label>
+          <input id="radio_2" type="radio" name="radiogroup">
+        </div>
+
+        <div data-form-expandable-target="content">
+          <h4>Radio button content</h4>
+        </div>
+      </fieldset>
+
+    </div>
+  </div>
 
     <div data-form-expandable-target="content">
       <div data-controller="form-expandable">

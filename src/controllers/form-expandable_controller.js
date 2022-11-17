@@ -25,6 +25,6 @@ export default class extends Controller {
 
   #getInputValue() {
     const input = this.flagTarget;
-    return input.type === 'checkbox' ? input.checked : input.value;
+    return input.type === 'checkbox' || input.type === 'radio' ? input.checked : input.value;
   }
 }
