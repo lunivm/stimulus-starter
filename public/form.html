@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <script src="bundle.js" async></script>
+</head>
+<body>
+  <form data-controller="form-expandable">
+    <label for="input1">Input (click me)</label>
+    <input id="input1" type="checkbox" data-action="change->form-expandable#toggle" data-form-expandable-target="flag"/>
+
+    <hr>
+    <input placeholder="email" type="email" data-form-expandable-target="content"/>
+
+    <div  data-form-expandable-target="content">
+      <div data-controller="form-expandable">
+        <hr>
+        <h4>Hidden content 1 level1 (start typing in text field)</h4>
+        <label>Input 1</label>
+        <input id="input1_1" type="text" data-action="input->form-expandable#toggle" data-form-expandable-target="flag"/>
+
+        <div class="indent" data-form-expandable-target="content">
+          <h4>Hidden content 1 level2</h4>
+          <label for="input1_2_1">Input1_2_1</label>
+          <input type="checkbox" id="input1_2_1"/>
+          <br>
+          <label for="input1_2_2">Input1_2_2</label>
+          <select id="input1_2_2">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <br>
+          <label for="input1_2_3">Input1_2_3</label>
+          <input type="text" id="input1_2_3"/>
+        </div>
+      </div>
+    </div>
+
+    <div data-form-expandable-target="content">
+      <div data-controller="form-expandable">
+        <hr>
+        <h4>Hidden content 2 level (3 levels nesting)</h4>
+        <label for="input2">Input2</label>
+        <input id="input2" type="checkbox" data-action="change->form-expandable#toggle" data-form-expandable-target="flag"/>
+
+        <div class="indent" data-form-expandable-target="content">
+          <div data-controller="form-expandable">
+            <h4>Hidden content 2 level2</h4>
+            <label for="input2_1">Input2_2</label>
+            <input id="input2_1" type="checkbox" data-action="change->form-expandable#toggle" data-form-expandable-target="flag"/>
+
+            <div class="indent" data-form-expandable-target="content">
+              <h4>Hidden content 2 level3</h4>
+              <button onclick="alert('Elements nesting level has no limits');" type="reset">How deep the rabbit hole goes?</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-form-expandable-target="content">
+      <div data-controller="form-expandable" data-form-expandable-content-value="opt3">
+        <hr>
+        <h4>Hidden content 3 level 1 (content for Option 3 only)</h4>
+        <label for="input3">Input3</label>
+        <select id="input3" data-action="change->form-expandable#toggle" data-form-expandable-target="flag">
+          <option value="opt1">Option 1</option>
+          <option value="opt2">Option 2</option>
+          <option value="opt3">Option 3</option>
+          <option value="opt4">Option 4</option>
+        </select>
+
+        <div class="indent" data-form-expandable-target="content">
+          <h4>Hidden content for Option 3 only</h4>
+          <input type="text"/>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

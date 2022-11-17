@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <script src="bundle.js" async></script>
+</head>
+<body>
+  <h1 data-controller="example"></h1>
+
+  <h2>Greet</h2>
+  <hr>
+  <div data-controller="hello">
+    <input data-hello-target="name" type="text"/>
+    <button data-action="click->hello#greet">Greet</button>
+  </div>
+
+  <h2>Copy to clipboard</h2>
+  <hr>
+  <div data-controller="clipboard"
+    data-clipboard-supported-class="clipboard--supported"
+  >
+    PIN: <input data-clipboard-target="hash" type="text" value="8743b52063cd84097a65d1633f5c74f5" readonly/>
+    <button data-action="clipboard#copy" class="clipboard-button">Copy to clipboard</button>
+  </div>
+  <br>
+  <div data-controller="clipboard"
+    data-clipboard-supported-class="clipboard--supported"
+  >
+    PIN: <textarea data-clipboard-target="hash" readonly>pin2</textarea>
+    <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to clipboard</a>
+  </div>
+
+  <h2>Slideshow</h2>
+  <hr>
+  <div data-controller="slideshow">
+    <button data-action="slideshow#toggleInfinite">Toggle infinite</button>
+
+    <div class="slideshow">
+      <button data-action="slideshow#previous" data-slideshow-target="previous">← Prev</button>
+      <button data-action="slideshow#next" data-slideshow-target="next">Next →</button>
+
+      <div data-slideshow-target="slide">🐵</div>
+      <div data-slideshow-target="slide">🙈</div>
+      <div data-slideshow-target="slide">🙉</div>
+      <div data-slideshow-target="slide">🙊</div>
+    </div>
+  </div>
+
+  <h2>Async load HTML</h2>
+  <hr>
+  <div data-controller="content-loader"
+    data-content-loader-url-value="/messages.html"
+  ></div>
+  <!-- data-content-loader-refresh-interval-value="5000" -->
+
+  <div data-controller="content-loader">
+    <a href="#" data-content-loader-url-param="/items.html" data-action="content-loader#load">Items</a>
+    <a href="#" data-content-loader-url-param="/comments.html" data-action="content-loader#load">Comments</a>
+  </div>
+
+</body>
+</html>
