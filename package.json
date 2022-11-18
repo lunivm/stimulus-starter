@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "deploy:heroku": "git push heroku dev:main"
+    "deploy:heroku": "git push heroku main:main"
   },
   "engines": {
     "node": ">=11"
