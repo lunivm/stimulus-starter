@@ -5,11 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js --openssl-legacy-provider",
     "deploy:heroku": "git push heroku main:main"
   },
   "engines": {
-    "node": ">=11"
+    "node": "16.x"
   },
   "dependencies": {
     "@babel/core": "^7.10.5",
