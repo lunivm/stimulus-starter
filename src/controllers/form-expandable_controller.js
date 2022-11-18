@@ -11,16 +11,18 @@ export default class extends Controller {
   }
 
   toggle() {
-    this.contentTargets.forEach(el => {
-      const inputValue = this.#getInputValue();
-      let hidden = !!inputValue;
+    this.contentTargets.forEach(el => this.#toggleElement(el));
+  }
 
-      if (this.contentValue) {
-        hidden = inputValue === this.contentValue;
-      }
+  #toggleElement(el) {
+    const inputValue = this.#getInputValue();
+    let enabled = !!inputValue;
 
-      el.style.display = hidden ? '' : 'none';
-    });
+    if (this.contentValue) {
+      enabled = inputValue === this.contentValue;
+    }
+
+    el.style.display = enabled ? '' : 'none';
   }
 
   #getInputValue() {
