@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <script src="bundle.js" async></script>
+</head>
+<body>
+  <h1>Inheritance</h1>
+  <div data-controller="inheritance" data-inheritance-label-value='{"plural": "multi", "single": "one"}' data-inheritance-test-value="true">
+    <input value="super" data-inheritance-target="item"/>
+  </div>
+  <div data-controller="feature--inheritance">
+    <input value="feature" data-feature--inheritance-target="item"/>
+    <input value="feature-self" data-feature--inheritance-target="self"/>
+  </div>
+</body>
