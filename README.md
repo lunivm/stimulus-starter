@@ -1,4 +1,4 @@
-# Stimulus Starter
+## Stimulus Starter
 
 A preconfigured blank slate for exploring [Stimulus](https://github.com/hotwired/stimulus). Jump to [The Stimulus Handbook](https://stimulus.hotwired.dev/handbook/introduction) for an introduction.
 
